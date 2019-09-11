@@ -1,0 +1,81 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <title>Chubby!</title>
+    <!-- build:css -->
+    <!-- endbuild -->
+
+
+</head>
+
+<body> 
+    <!-- @@include ../include/nav.html -->
+    <!-- @@include ../include/header.html -->
+    <div class="index">
+        <div class="banner">
+            <div class="bns" style="background-image: url(../../images/layout/slick1.jpg)">
+                <div class="wrap">
+                    <div class="bnsblock">
+                        <img src="" alt="">
+                        <h2>TEST</h2>
+                        <p>Utilize countless reusable UI elements and plugins and have the perfect admin ready and set in as little time as possible. There is no need to be doing anything from the ground up when so much goodness is at your disposal. Get sucked in the amazingness of Kiaalap and have the final product available sooner rather than later.</p>
+                    </div>
+                </div>
+            </div>
+            <div class="bns" style="background-image: url(../../images/layout/slick2.jpg)">
+                <div class="wrap">
+                    <div class="bnsblock">
+                        <img src="" alt="">
+                        <h2>TEST</h2>
+                        <p>Utilize countless reusable UI elements and plugins and have the perfect admin ready and set in as little time as possible. There is no need to be doing anything from the ground up when so much goodness is at your disposal. Get sucked in the amazingness of Kiaalap and have the final product available sooner rather than later.</p>
+                    </div>
+                </div>
+            </div>
+            <div class="bns" style="background-image: url(../../images/layout/slick3.jpg)">
+                <div class="wrap">
+                    <div class="bnsblock"> 
+                        <img src="" alt="">
+                        <h2>TEST</h2>
+                        <p>Utilize countless reusable UI elements and plugins and have the perfect admin ready and set in as little time as possible. There is no need to be doing anything from the ground up when so much goodness is at your disposal. Get sucked in the amazingness of Kiaalap and have the final product available sooner rather than later.</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <div class="testblock" style="height: 100vh;">
+
+        </div>
+    </div>
+    <!-- @@include ../include/footer.html -->
+    <!-- @@include ../include/loading.html -->
+    <!-- @@include ../include/top.html -->
+    <!-- build:js -->
+    <!-- endbuild -->
+    <!-- build:js-slick -->
+    <!-- endbuild -->
+    <!-- build:js-mousewheel -->
+    <!-- endbuild -->
+    <script>
+        $('.banner').slick({
+            speed: 1000,
+            fade: true,
+            cssEase: 'cubic-bezier(.02, .8, .78, .69)',
+        })
+        $(window).mousewheel(function(e) {
+            console.log(e.deltaY)
+            var msw = e.deltaY
+            if( msw == -1) {
+                $('.banner').slick("slickNext")
+            }
+            else if( msw == 1) {
+                $('.banner').slick("slickPrev")
+            }
+        })
+
+    </script>
+</body>
+
+</html>

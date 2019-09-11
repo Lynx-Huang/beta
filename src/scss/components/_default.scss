@@ -1,0 +1,311 @@
+@import url("https://use.typekit.net/hsr0fbe.css");
+html {
+    box-sizing: border-box;
+    -ms-overflow-style: scrollbar;
+}
+
+* {
+    -webkit-box-sizing: border-box;
+    -moz-box-sizing: border-box;
+    box-sizing: border-box;
+}
+
+*,
+*::before,
+*::after {
+    box-sizing: inherit;
+}
+
+html {
+    overflow-x: hidden;
+}
+
+body {
+    font-family: "Microsoft JhengHei", Helvetica, Arial, Verdana, "PingFang", "PingFangTC", sans-serif;
+    font-size: 1rem;
+    width: 100%;
+    margin: 0;
+    padding: 0;
+    overflow: hidden;
+    position: relative;
+    line-height: 1.375em;
+     ::selection {
+        background: $color-main;
+        color: #fff;
+    }
+     ::-moz-selection {
+        background: $color-main;
+        color: #fff;
+    }
+    img::selection {
+        background: transparent;
+    }
+    img::-moz-selection {
+        background: transparent;
+    }
+    * {
+        line-height: 1.375em;
+    }
+}
+
+input,
+select,
+textarea {
+    outline: none;
+    font-family: "Microsoft JhengHei", Helvetica, Arial, Verdana, "PingFang", "PingFangTC", sans-serif;
+    font-size: 1rem;
+    line-height: 1.375em;
+    &:focus {
+        outline: none;
+    }
+}
+
+
+/*a連結設定*/
+
+a {
+    text-decoration: none;
+    color: $color-main;
+    outline: none;
+    &:hover,
+    &:active,
+    &:focus {
+        text-decoration: none;
+        outline: none;
+    }
+}
+
+select {
+    background: #fff;
+}
+
+.mask {
+    height: 100vh;
+    width: 100vw;
+    background-color: rgba(0, 0, 0, 0.7);
+    position: fixed;
+    z-index: 9000;
+    left: 0;
+    top: 0;
+}
+
+//這是用來控制目前是什麼行動模式或是桌面模式
+#js-rwd {
+    display: block;
+    height: 0;
+    width: 0;
+    background: transparent;
+    visibility: hidden;
+    @include xl {
+        width: 10px;
+    }
+}
+
+p {
+    font-size: 1rem;
+    line-height: 1.75em;
+    // @include md {
+    //     font-size: 1.125rem;
+    margin: 0;
+    color: #222;
+    // }
+    @include xl {
+        font-size: 1.125rem;
+    }
+}
+
+h2 {
+    margin: 0;
+    color: #222;
+}
+
+ul {
+    list-style: none;
+    padding: 0;
+    margin: 0;
+}
+
+// .tags-contents {
+//     visibility: hidden;
+//     opacity: 0;
+//     display: none;
+//     &.show {
+//         visibility: visible;
+//         opacity: 1;
+//         display: block;
+//     }
+// }
+#loading-wrapper {
+    position: fixed;
+    width: 100%;
+    height: 100%;
+    left: 0;
+    top: 0;
+}
+
+#loading-text {
+    display: block;
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    color: #999;
+    width: 100px;
+    height: 30px;
+    margin: -7px 0 0 -45px;
+    text-align: center;
+    font-family: 'PT Sans Narrow', sans-serif;
+    font-size: 20px;
+}
+
+#loading-content {
+    display: block;
+    position: relative;
+    left: 50%;
+    top: 50%;
+    width: 170px;
+    height: 170px;
+    margin: -85px 0 0 -85px;
+    border: 3px solid #F00;
+}
+
+#loading-content:after {
+    content: "";
+    position: absolute;
+    border: 3px solid #0F0;
+    left: 15px;
+    right: 15px;
+    top: 15px;
+    bottom: 15px;
+}
+
+#loading-content:before {
+    content: "";
+    position: absolute;
+    border: 3px solid #00F;
+    left: 5px;
+    right: 5px;
+    top: 5px;
+    bottom: 5px;
+}
+
+#loading-content {
+    border: 3px solid transparent;
+    border-top-color: #4D658D;
+    border-bottom-color: #4D658D;
+    border-radius: 50%;
+    -webkit-animation: loader 2s linear infinite;
+    -moz-animation: loader 2s linear infinite;
+    -o-animation: loader 2s linear infinite;
+    animation: loader 2s linear infinite;
+}
+
+#loading-content:before {
+    border: 3px solid transparent;
+    border-top-color: #D4CC6A;
+    border-bottom-color: #D4CC6A;
+    border-radius: 50%;
+    -webkit-animation: loader 3s linear infinite;
+    -moz-animation: loader 2s linear infinite;
+    -o-animation: loader 2s linear infinite;
+    animation: loader 3s linear infinite;
+}
+
+#loading-content:after {
+    border: 3px solid transparent;
+    border-top-color: #84417C;
+    border-bottom-color: #84417C;
+    border-radius: 50%;
+    -webkit-animation: loader 1.5s linear infinite;
+    animation: loader 1.5s linear infinite;
+    -moz-animation: loader 2s linear infinite;
+    -o-animation: loader 2s linear infinite;
+}
+
+@-webkit-keyframes loaders {
+    0% {
+        -webkit-transform: rotate(0deg);
+        -ms-transform: rotate(0deg);
+        transform: rotate(0deg);
+    }
+    100% {
+        -webkit-transform: rotate(360deg);
+        -ms-transform: rotate(360deg);
+        transform: rotate(360deg);
+    }
+}
+
+@keyframes loader {
+    0% {
+        -webkit-transform: rotate(0deg);
+        -ms-transform: rotate(0deg);
+        transform: rotate(0deg);
+    }
+    100% {
+        -webkit-transform: rotate(360deg);
+        -ms-transform: rotate(360deg);
+        transform: rotate(360deg);
+    }
+}
+
+.load {
+    //@include background(linear-gradient(to bottom right, $color-main, ));
+    // @include background-image(radial-gradient($color-light 0%, $color-main 100%));
+    position: fixed;
+    z-index: 6000;
+    left: 0;
+    top: 0;
+    width: 100%;
+    height: 100%;
+    img {
+        display: inline-block;
+        width: 72px;
+        height: auto;
+        transform: translate(-50%, -50%);
+        position: absolute;
+        left: 50%;
+        top: 50%;
+    }
+}
+
+sub,
+sup {
+    font-size: 0.625em;
+    margin-right: 0.5rem;
+}
+.back-to-top {
+    position: fixed;
+    bottom: 30px;
+    right: 30px;
+    display: flex;  
+    align-items: center;
+    justify-content: center;
+    // padding: 1em;
+    // margin: 1em;
+    // background: #E8E8E8;
+    // border: 2px solid #000;
+    z-index: 100;
+    width: 50px;
+    height: 50px;
+    border-radius: 50%;
+    background-color: #ddd;
+    &.wht {
+        // color: #fff;
+    }
+    &:after {
+        content: '';
+        display: block;
+        position: absolute;
+        right: 0;
+        top: 50%;
+        width: 10px;
+        height: 5px;
+        transform: translateY(-50%) rotate(180deg);
+        background-image: url(../../images/layout/arrow.svg);
+        background-position: center;
+        background-repeat: no-repeat;
+        background-size: 10px auto;
+    }
+}
+.back-to-top:hover {
+    cursor: pointer;
+}

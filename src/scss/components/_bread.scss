@@ -1,0 +1,41 @@
+.bread {
+    width: 100%;
+    background-color: #F0F0F0;
+    height: 50px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    @include mq($xs,$md - 1) {
+        display: none;
+    }
+}
+
+.bread-c {
+    width: 100%;
+    display: flex;
+    align-items: center;
+    justify-content: flex-start; //控制左中右
+}
+
+.bread-c-d {
+    display: flex; //默認水平
+    align-items: center;
+    justify-content: center;
+    a {
+        font-size: 16px;
+        color: #666;
+        display: inline-block;
+        vertical-align: middle;
+        i {
+            background-image: url(../../images/layout/arrow.svg);
+            background-position: center;
+            background-size: 5px auto;
+            background-repeat: no-repeat;
+            display: inline-block;
+            vertical-align: middle;
+            width: 5px;
+            height: 6px;
+            margin: 0 15px;
+        }
+    }
+}

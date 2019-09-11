@@ -1,0 +1,82 @@
+//spin-circle
+.loading-circle {
+    margin: 0 auto;
+    width: 40px;
+    height: 40px;
+    border-radius: 50%;
+    border: 4px solid #BEB69D;
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    animation: spin 1s infinite linear;
+    &:before {
+        content: '';
+        width: 40px;
+        height: 40px;
+        border-radius: 50%;
+        display: block;
+        position: absolute;
+        left: -4px;
+        top: -4px;
+        border-right: 4px solid #BEB69D;
+        border-top: 4px solid #BEB69D;
+        border-left: 4px solid #FFF;
+        border-bottom: 4px solid #BEB69D;
+    }
+}
+
+@keyframes spin {
+    100% {
+        transform: rotate(360deg);
+    }
+}
+
+//animation bar
+.loading-bars {
+    text-align: center;
+    opacity: .6;
+    transition-duration: 0.3s;
+    &:hover {
+        opacity: 1;
+    }
+}
+
+.loading-bars {
+    .bar {
+        height: 20px;
+        width: 10px;
+        background: #FFF;
+        display: inline-block;
+        animation: loadpulse 1.2s infinite ease-out;
+    }
+}
+
+.loading-bars .bar:nth-of-type(0n+1) {
+    animation-delay: 0s;
+}
+
+.loading-bars .bar:nth-of-type(0n+2) {
+    animation-delay: 0.2s;
+}
+
+.loading-bars .bar:nth-of-type(0n+3) {
+    animation-delay: 0.4s;
+}
+
+.loading-bars .bar:nth-of-type(0n+4) {
+    animation-delay: 0.6s;
+}
+
+.loading-bars .bar:nth-of-type(0n+5) {
+    animation-delay: 0.8s;
+}
+
+@keyframes loadpulse {
+    0%,
+    75% {
+        transform: scale(1, 1);
+    }
+    25% {
+        transform: scale(1, 3);
+    }
+}

@@ -1,0 +1,143 @@
+.contact {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    margin-top: 50px;
+    padding-bottom: 30px;
+    @include mq($xl) {
+        margin-top: 80px;
+    }
+    &.flex-row {
+        .contain-c {
+            flex-direction: column;
+            @include mq($lg) {
+                flex-direction: row;
+            }
+        }
+        .contact-us {
+            margin-right: 30px;
+        }
+    }
+    &.flex-vrow {
+        .contain-c {
+            flex-direction: column;
+            @include mq($lg) {
+                flex-direction: row-reverse;
+            }
+        }
+        .map {
+            margin-right: 30px;
+        }
+    }
+    &.flex-v {
+        .contain-c {
+            flex-direction: column;
+            @include mq($lg) {
+                flex-direction: column-reverse;
+            }
+        }
+        .map {
+            margin-bottom: 30px;
+        }
+    }
+    .banner {
+        background-position: center;
+        background-size: cover;
+        background-repeat: no-repeat;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        width: 100%;
+        height: 400px;
+        @include mq($xs,$md - 1) {
+            height: auto;
+            align-items: flex-start;
+            background-image: none !important;
+        }
+    }
+    .banner-c {
+        display: flex;
+        align-items: center;
+        justify-content: center; //控制左中右
+        width: 100%;
+        @include mq($xs,$md - 1) {
+            justify-content: flex-start;
+            flex-direction: column;
+        }
+        img {
+            @include mq($xs,$md - 1) {
+                display: block;
+                width: 100%;
+                margin-bottom: 20px;
+            }
+            @include mq($md) {
+                display: none;
+            }
+        }
+    }
+    .banner-c-d {
+        display: flex;
+        align-items: center;
+        flex-direction: column;
+        justify-content: center; //控制左中右
+        h2 {
+            font-weight: bold;
+            font-size: 36px;
+            color: #222;
+            @include mq($md) {
+                font-size: 46px;
+                color: #fff;
+            }
+        }
+        h3 {
+            font-size: 16px;
+            color: #222;
+            @include mq($md) {
+                font-size: 18px;
+                color: #fff;
+            }
+        }
+        p {
+            display: none;
+            @include mq($md) {
+                display: block;
+                font-size: 16px;
+                color: #fff;
+            }
+        }
+    }
+    .contain {
+        background-image: url(../../images/layout/gray-cover.png);
+        background-position: top;
+        background-size: contain;
+        background-repeat: no-repeat;
+        display: flex;
+        flex-direction: row;
+        align-items: center;
+        justify-content: center;
+        width: 100%;
+        padding-top: 40px;
+        @include mq($xs,$md - 1) {
+            background-image: none;
+        }
+        @include mq($lg) {
+            padding-top: 65px;
+        }
+    }
+    .contain-c {
+        display: flex;
+        flex-direction: column; //控制水平垂直反像水平反像垂直
+        align-items: center;
+        justify-content: center;
+    }
+    .contact-us {
+        flex: 1;
+        .btn {
+            float: left;
+        }
+    }
+    .map {
+        flex: 1;
+    }
+}
