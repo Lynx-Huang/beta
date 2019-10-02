@@ -69,7 +69,7 @@ $(function() {
 
     $(window).scroll(function() {
         scrollNow = $(window).scrollTop();
-        console.log(scrollNow);
+        // console.log(scrollNow);
         if (scrollNow > 80) {
             $header.addClass('fixed');
             $nav.addClass('fixed');

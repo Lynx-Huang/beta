@@ -12,11 +12,11 @@
 
 </head>
 
-<body> 
+<body onmousewheel="return false;"> 
     <!-- @@include ../include/nav.html -->
     <!-- @@include ../include/header.html -->
     <div class="index">
-        <div class="banner">
+        <!-- <div class="banner">
             <div class="bns" style="background-image: url(../../images/layout/slick1.jpg)">
                 <div class="wrap">
                     <div class="bnsblock">
@@ -44,9 +44,18 @@
                     </div>
                 </div>
             </div>
+        </div> -->
+        <div class="block block1" style="height: 100vh;">
+            <img src="../../images/layout/index1.png" alt="">
         </div>
-        <div class="testblock" style="height: 100vh;">
-
+        <div class="block block2" style="height: 100vh;">
+            2
+        </div>
+        <div class="block block3" style="height: 100vh;">
+            3
+        </div>
+        <div class="block block4" style="height: 100vh;">
+            4
         </div>
     </div>
     <!-- @@include ../include/footer.html -->
@@ -58,22 +67,133 @@
     <!-- endbuild -->
     <!-- build:js-mousewheel -->
     <!-- endbuild -->
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/1.19.0/TweenMax.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/vue/2.0.3/vue.js"></script>
     <script>
-        $('.banner').slick({
-            speed: 1000,
-            fade: true,
-            cssEase: 'cubic-bezier(.02, .8, .78, .69)',
-        })
+        // $('.banner').slick({
+        //     speed: 1000,
+        //     fade: true,
+        //     cssEase: 'cubic-bezier(.02, .8, .78, .69)',
+        // })
+        // $(window).mousewheel(function(e) {
+        //     console.log(e.deltaY)
+        //     var msw = e.deltaY
+        //     if( msw == -1) {
+        //         $('.banner').slick("slickNext")
+        //     }
+        //     else if( msw == 1) {
+        //         $('.banner').slick("slickPrev")
+        //     }
+        // })
+
+    </script>
+<script>
+        //檢查滾輪上下事件
         $(window).mousewheel(function(e) {
             console.log(e.deltaY)
-            var msw = e.deltaY
-            if( msw == -1) {
-                $('.banner').slick("slickNext")
-            }
-            else if( msw == 1) {
-                $('.banner').slick("slickPrev")
-            }
         })
+        $(document).ready(function() {
+            //滾動滑鼠滾輪時，移動到上一頁、下一頁的效果
+
+            var index_num = $('.block').length
+            n = 1
+            moving = 0
+            $('.na1').find('a').on('click', ()=> {
+                n = 1
+                $("html, body").stop().animate({
+                    scrollTop: $(".block" + n).offset().top
+                },
+                    function() {
+                        moving = 0;
+                    }
+                );
+            })
+            $('.na2').find('a').on('click', ()=> {
+                n = 2
+                $("html, body").stop().animate({
+                    scrollTop: $(".block" + n).offset().top
+                },
+                    function() {
+                        moving = 0;
+                    }
+                );
+            })
+            $('.na3').find('a').on('click', ()=> {
+                n = 3
+                $("html, body").stop().animate({
+                    scrollTop: $(".block" + n).offset().top
+                },
+                    function() {
+                        moving = 0;
+                    }
+                );
+            })
+            $('.na4').find('a').on('click', ()=> {
+                n = 4
+                $("html, body").stop().animate({
+                    scrollTop: $(".block" + n).offset().top
+                },
+                    function() {
+                        moving = 0;
+                    }
+                );
+            })
+            $(window).mousewheel(debounce(e => scrollToCurrentItem(e), 100,true));
+
+            function scrollToCurrentItem(e) {
+                if (moving == 0) {
+                    moving = 1
+                    if (e.deltaY == -1) {
+                        if (n < index_num) {
+                            n++
+                            console.log(n)
+                        }
+                    } else if (e.deltaY == 1) {
+                        if (n > 1) {
+                            n--
+                            console.log(n)
+                        }
+                    }
+                }
+                if (n == (index_num + 1)) {
+                    // $("html, body").stop().animate({
+                    //         scrollTop: $(".footer").offset().top
+                    //     },
+                    //     function() {
+                    //         moving = 0;
+                    //     }
+                    // );
+                    n--
+                } else {
+                    $("html, body").stop().animate({
+                        scrollTop: $(".block" + n).offset().top
+                    },500,
+                        function() {
+                            moving = 0;
+                        }
+                    );
+                    $('.nav_a').find('.na' + n).find('a').addClass('active').parent('li').siblings().find('a').removeClass('active')
+                    background.style.transform = `translateY(${130 * (n - 1)}%)`;
+                }
+                // console.log('aaa' + n)
+                
+            }
+            function debounce(func, wait, immediate) {
+                var timeout;
+                return function() {
+                    var context = this,
+                        args = arguments;
+                    var later = function() {
+                        timeout = null;
+                        if (!immediate) func.apply(context, args);
+                    };
+                    var callNow = immediate && !timeout;
+                    clearTimeout(timeout);
+                    timeout = setTimeout(later, wait);
+                    if (callNow) func.apply(context, args);
+                };
+            }
+        });
 
     </script>
 </body>

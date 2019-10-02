@@ -1,0 +1,44 @@
+header {
+    position: fixed;
+    left: 0;
+    top: 0;
+    padding: 100px 0 0;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    flex-direction: column;
+    background-color: transparent;
+    width: 300px;
+    height: 100vh;
+    z-index: 80;
+    pointer-events: none;
+    a {
+        pointer-events: initial;
+        display: block;
+        width: 170px;
+        height: 58px;
+    }
+    img {
+        display: block;
+        width: 100%;
+    }
+    .desc {
+        width: 100%;
+        display: block;
+        padding: 0 30px;
+        margin-bottom: 50px;
+        p {
+            display: block;
+            color: #fff;
+            text-align: center;
+            &:first-of-type {
+                text-align: left;
+                opacity: .5;
+            }
+            &:last-of-type {
+                opacity: .5;
+                text-align: right;
+            }
+        }
+    }
+}
