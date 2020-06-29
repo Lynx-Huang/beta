@@ -2,21 +2,47 @@ header {
     position: fixed;
     left: 0;
     top: 0;
-    padding: 100px 0 0;
     display: flex;
-    align-items: center;
+    align-items: flex-start;
     justify-content: space-between;
     flex-direction: column;
     background-color: transparent;
     width: 300px;
     height: 100vh;
     z-index: 80;
+    padding: 20px 30px;
     pointer-events: none;
+    transition-duration: 0.4s;
+    &.fixed {
+        opacity: 0;
+        visibility: hidden;
+        @include mq($lg) {
+            opacity: 1;
+            visibility: visible;
+        }
+    }
+    @include mq($lg) {
+        align-items: center;
+        padding: 50px 0 0;
+
+    }
+    @include mq($xxl) {
+        padding: 100px 0 0;
+
+    }
     a {
         pointer-events: initial;
         display: block;
-        width: 170px;
-        height: 58px;
+        width: 100;
+        max-width: 140px;
+        // height: 58px;
+        @include mq($sm) {
+            width: 100%;
+            max-width: 150px;
+        }
+        @include mq($lg) {
+            max-width: 170px;
+        }
     }
     img {
         display: block;
@@ -24,9 +50,12 @@ header {
     }
     .desc {
         width: 100%;
-        display: block;
+        display: none;
         padding: 0 30px;
         margin-bottom: 50px;
+        @include mq($lg) {
+            display: block;
+        }
         p {
             display: block;
             color: #fff;

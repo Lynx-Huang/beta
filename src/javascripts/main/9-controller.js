@@ -1,4 +1,5 @@
 $(window).load(function() {
+    transition()
     $('.load').fadeOut(500);
     // 滾動css動態
     new WOW().init();
