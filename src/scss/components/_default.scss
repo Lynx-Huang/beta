@@ -1,4 +1,6 @@
-@import url("https://use.typekit.net/hsr0fbe.css");
+
+@import url('https://fonts.googleapis.com/css2?family=Noto+Sans+TC:wght@400;700&display=swap');
+// @import url("https://use.typekit.net/hsr0fbe.css");
 html {
     box-sizing: border-box;
     -ms-overflow-style: scrollbar;
@@ -21,7 +23,7 @@ html {
 }
 
 body {
-    font-family: "Microsoft JhengHei", Helvetica, Arial, Verdana, "PingFang", "PingFangTC", sans-serif;
+    font-family: 'Noto Sans TC',"Microsoft JhengHei", Helvetica, Arial, Verdana, "PingFang", "PingFangTC", sans-serif;
     font-size: 1rem;
     width: 100%;
     margin: 0;
@@ -29,12 +31,14 @@ body {
     overflow: hidden;
     position: relative;
     line-height: 1.375em;
+    cursor: url('../../images/layout/point40.png'), auto !important;
+    // cursor: url('../../images/layout/point50.png'), pointer !important;
      ::selection {
-        background: $color-main;
+        background: #7F4F21;
         color: #fff;
     }
      ::-moz-selection {
-        background: $color-main;
+        background: #7F4F21;
         color: #fff;
     }
     img::selection {
@@ -52,7 +56,7 @@ input,
 select,
 textarea {
     outline: none;
-    font-family: "Microsoft JhengHei", Helvetica, Arial, Verdana, "PingFang", "PingFangTC", sans-serif;
+    font-family: 'Noto Sans TC',"Microsoft JhengHei", Helvetica, Arial, Verdana, "PingFang", "PingFangTC", sans-serif;
     font-size: 1rem;
     line-height: 1.375em;
     &:focus {

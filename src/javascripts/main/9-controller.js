@@ -1,14 +1,15 @@
 $(window).load(function() {
-    transition()
-    $('.load').fadeOut(500);
+    // transition()
+    setTimeout(function() {
+        $('.loader').fadeOut(500);        
+    }, 4000);
     // 滾動css動態
     new WOW().init();
     //跑馬燈
-})
-
+}) 
+ 
 $(function() {
     /*-------------------------------*/
-    /*---手機選單---*/
     /*-------------------------------*/
     var RWD = navigator.userAgent,
         winWidth = $(window).width(),
@@ -21,7 +22,7 @@ $(function() {
         fixbar,
         winNow,
         posRef,
-        jsrwd,
+        jsrwd, 
         body = $("html, body"),
         $mask,
         scrollNow,
@@ -95,7 +96,7 @@ $(function() {
     $(".lazy").lazyload({
         threshold: 500,
         effect: "fadeIn"
-    });
+    }); 
 
     function MENU() {
         if (needMask) {

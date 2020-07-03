@@ -9,7 +9,7 @@ var rename = require("gulp-rename");
 var plumber = require('gulp-plumber');
 var sass = require('gulp-sass');
 var compass = require('gulp-compass');
-var folders = require('gulp-folders');
+var folders = require('gulp-folders-4x');
 var pathToFolder = 'src/javascripts';
 var replace = require('gulp-string-replace');
 var path = require('path');
@@ -32,6 +32,7 @@ var tempfolder = "src/html-output/en"; //預覽資料夾
 // 輸出php的預設資料夾，注意!!此資料夾的層級要與html-output的資料夾同級 //application/views/en
 var jsplugin = {
     'css': assetspath + 'css/style.min.css',
+    'js-control': assetspath + 'js/9-controller.min.js',
     'js': assetspath + 'js/main.min.js',
     'oldie': assetspath + 'js/html5shiv.min.js',
     'js-slick': assetspath + 'js/slick.min.js',
@@ -52,16 +53,17 @@ var jsplugin = {
 // });
 
 // 開啟http server
-gulp.task('server', function() {
+gulp.task('server', function(cb) {
     connect.server({
         livereload: true,
         port: 8080
     });
+    cb();
 });
 
 
 // 監聽scss
-gulp.task('sass', function() {
+gulp.task('sass', function(cb) {
     gulp.src('src/scss/*.scss')
         .pipe(plumber())
         .pipe(
@@ -78,6 +80,7 @@ gulp.task('sass', function() {
             path.extname = ".css";
         }))
         .pipe(gulp.dest('assets/css'));
+        cb();
 });
 
 // 將css壓縮並更名
@@ -95,11 +98,6 @@ gulp.task('sass', function() {
 //         .pipe(gulp.dest('assets/css'));
 // });
 
-// font複製
-gulp.task('fonts', function() {
-    return gulp.src('src/fonts/**/*')
-        .pipe(gulp.dest('assets/fonts'));
-});
 
 // 將js壓縮並更名
 gulp.task('js-folder-min', folders(pathToFolder, function(folder) {
@@ -111,11 +109,23 @@ gulp.task('js-folder-min', folders(pathToFolder, function(folder) {
             path.extname = ".js";
         }))
         .pipe(gulp.dest('assets/js'));
+    })
+);
 
-}));
+// gulp.task('js-folder-min', (cb) => {
+//     return gulp
+//         .src('src/javascripts/main/9-controller.js')
+//         .pipe(uglify())
+//         .pipe(rename(function(path) {
+//             path.basename += ".min";
+//             path.extname = ".js";
+//         }))
+//         .pipe(gulp.dest('assets/js'));
+//         cb();
+// });
 
 // 壓縮圖片 
-gulp.task('image', function() {
+gulp.task('image', function(cb) {
     var DEST = 'assets/img'
     gulp.src('src/images/**/*')
         .pipe(changed(DEST))
@@ -129,6 +139,7 @@ gulp.task('image', function() {
             concurrent: 5
         }))
         .pipe(gulp.dest(DEST));
+        cb();
 });
 
 // 程式壓縮
@@ -171,7 +182,7 @@ gulp.task('image', function() {
 
 
 // 置換共用css與js區塊
-gulp.task('html-output', function() {
+gulp.task('html-output', function(cb) {
     return gulp.src('src/' + htmlfolder + '/**/*.html')
         .pipe(extender({ annotations: true, verbose: false }))
         .pipe(replace('../../images/', assetspath + 'img/'))
@@ -183,21 +194,22 @@ gulp.task('html-output', function() {
         .pipe(htmlreplace(jsplugin))
         .pipe(gulp.dest(tempfolder))
         .pipe(connect.reload());
+        cb()
 });
 
 // gulp.task('build', ['fonts', 'compass', 'styles', 'js-folder-min', 'image', 'html-output']);
 // 'php-replace',
-gulp.task('watch-html', function() {
-    gulp.watch('src/scss/**/*.*', ['sass']);
-    gulp.watch('src/' + htmlfolder + '/**/*.html', ['html-output']);
+gulp.task('watch-html', function(cb) {
+    gulp.watch('src/scss/**/*.*', gulp.parallel('sass'));
+    gulp.watch('src/' + htmlfolder + '/**/*.html',  gulp.parallel('html-output'));
     // gulp.watch('src/' + htmlfolder + '/**/*.html', ['php-replace']);
     // gulp.watch('src/css/*.css', ['styles']);
-    gulp.watch('src/images/**/*', ['image']);
-    gulp.watch('src/javascripts/**/*.js', ['js-folder-min']);
+    gulp.watch('src/images/**/*',  gulp.parallel('image'));
+    gulp.watch('src/javascripts/**/*.js', gulp.parallel('js-folder-min'));
     livereload.listen();
     gulp.watch([tempfolder + '/**/*.*']).on('change', livereload.changed);
     gulp.watch(['assets/**/*.*']).on('change', livereload.changed);
-
+    cb();
 });
-gulp.task('init', ['image', 'fonts', 'sass', 'js-folder-min']);
-gulp.task('live', ['server', 'watch-html']);
+gulp.task('init', gulp.series('image', 'sass', 'js-folder-min'));
+gulp.task('live', gulp.series('server', 'watch-html'));

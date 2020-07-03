@@ -1,0 +1,16 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="85" height="140" viewBox="0 0 85 140">
+  <g id="Group_13" data-name="Group 13" transform="translate(-775 -514)">
+    <g id="Rectangle_18" data-name="Rectangle 18" transform="translate(775 514)" fill="#fff" stroke="#707070" stroke-width="4" style="mix-blend-mode: darken;isolation: isolate">
+      <rect width="85" height="115" rx="42.5" stroke="none"/>
+      <rect x="2" y="2" width="81" height="111" rx="40.5" fill="none"/>
+    </g>
+    <g id="Rectangle_19" data-name="Rectangle 19" transform="translate(810 539)" fill="#fff" stroke="#707070" stroke-width="4" style="mix-blend-mode: darken;isolation: isolate">
+      <rect width="15" height="21.353" rx="7.5" stroke="none"/>
+      <rect x="2" y="2" width="11" height="17.353" rx="5.5" fill="none"/>
+    </g>
+    <g id="Polygon_2" data-name="Polygon 2" transform="translate(833 654) rotate(180)" fill="#fff">
+      <path d="M 26.67603874206543 15.5 L 3.32396388053894 15.5 L 15.00000095367432 2.267158031463623 L 26.67603874206543 15.5 Z" stroke="none"/>
+      <path d="M 15.00000095367432 4.534304618835449 L 6.647916793823242 14 L 23.35208511352539 14 L 15.00000095367432 4.534304618835449 M 15.00000095367432 0 L 30 17 L 1.9073486328125e-06 17 L 15.00000095367432 0 Z" stroke="none" fill="#707070"/>
+    </g>
+  </g>
+</svg>
