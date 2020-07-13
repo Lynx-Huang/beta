@@ -1,8 +1,8 @@
 $(window).load(function() {
     // transition()
-    setTimeout(function() {
-        $('.loader').fadeOut(500);        
-    }, 4000);
+    // setTimeout(function() {
+    //     $('.loader').fadeOut(0);        
+    // }, 4000);
     // 滾動css動態
     new WOW().init();
     //跑馬燈
@@ -71,7 +71,7 @@ $(function() {
 
     $(window).scroll(function() {
         scrollNow = $(window).scrollTop();
-        // console.log(scrollNow);
+        console.log(scrollNow);
         if (scrollNow > 80) {
             $header.addClass('fixed');
             $nav.addClass('fixed');

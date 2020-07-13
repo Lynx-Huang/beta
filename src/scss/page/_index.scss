@@ -12,25 +12,32 @@ h2 {
     }
 }
 p {
-    font-size: 18px;
+    font-size: 16px;
     margin-bottom: 20px;
     color: #444;
+    @include mq($md) {
+        font-size: 18px;
+    }
 }
 .login {
     position: fixed;
-    right: 50px;
+    right: 20px;
     top: 20px;
-    padding: 0 20px;
+    padding: 0 15px;
     border-radius: 50px;
     border: 2px solid #7F4F21;
-    height: 40px;
+    height: 32px;
     background-color: #fff;
     display: flex;
     align-items: center;
     justify-content: center;
     z-index: 400;
     color: #7F4F21;
-    
+    @include mq($lg) {
+        right: 50px;
+        padding: 0 20px;
+        height: 40px
+    }
 }
 .scrollDown {
     position: absolute;
@@ -69,12 +76,16 @@ p {
     // background-color: #F5C520;
     .spm {
         position: absolute;
-        right: -100px;
+        right: -50px;
         bottom: 0;
         // top: 50%;
         // transform: translateY(-50%);
-        width: 350px;
+        max-width: 150px;
         opacity: 0.9;
+        @include mq($xl) {
+            right: -100px;
+            max-width: 350px;
+        }
     }
     .block {
         display: flex;
@@ -90,11 +101,6 @@ p {
             background-position: center;
             background-repeat: no-repeat;
             background-size: 80%;
-            animation-name: bglighten; // 動畫腳本名稱
-            animation-duration: 5s; // 動畫執行時間
-            animation-delay: 0; // 動畫delay時間
-            animation-direction: alternate-reverse;
-            animation-iteration-count: infinite; // 動畫執行次數
         }
         @include mq($lg) {
             // height: 100vh;
@@ -109,15 +115,6 @@ p {
         }
         .wrap {
            min-height: inherit;
-        }
-        .spm {
-            position: absolute;
-            right: -100px;
-            bottom: 0;
-            // top: 50%;
-            // transform: translateY(-50%);
-            width: 350px;
-            opacity: 0.9;
         }
         img {
             width: 100%;
@@ -136,6 +133,16 @@ p {
             justify-content: center;
             @include mq($lg) {
                 justify-content: center;
+            }
+            .wrap {
+                display: flex;
+                flex-direction: column-reverse;
+                flex-wrap: nowrap;
+                align-items: center;
+                justify-content: center;
+                @include mq($xl) {
+                    flex-direction: row;
+                }
             }
             .desc {
                 max-width: 550px;
@@ -159,13 +166,32 @@ p {
                 height: 100%;
             }
         }
+        &.block3 {
+            .servicelg {
+            
+            }
+        }
         &.block4 {
-            img {
-                max-width: 300px;
+            .line {
+                max-width: 200px;
                 margin-bottom: 20px;
             }
             ul {
                 justify-content: flex-start;
+                flex-wrap: wrap;
+                flex-direction: row;
+            }
+            iframe {
+                border: 5px solid #7f4f21;
+                border-radius: 30px;
+                margin-bottom: 30px;
+            }
+            .desc-block {
+                ul {
+                    li {
+                        max-width: 280px;
+                    }
+                }
             }
             @include mq($xs, $lg - 1) {
                 margin-bottom: 89px;
@@ -178,23 +204,6 @@ p {
             @include mq($lg) {
             }
         }
-    }
-    .block2 {
-        // background-repeat: no-repeat;
-        // background-size: auto 140px;
-        // background-position: bottom right;
-        // @include mq($lg) {
-        //     background-position: bottom 10% right;
-        //     background-size: auto 300px;
-        // }
-        // @include mq($xl) {
-        //     background-position: bottom 10% right;
-        //     background-size: auto 30vw;
-        // }
-        // @include mq($xxl) {
-        //     background-position: center right -10%;
-        //     background-size: auto 700px;
-        // }
     }
     .desc {
         width: 100%;
@@ -236,6 +245,61 @@ p {
                 @include mq($lg) {
 
                 }
+            }
+        }
+        img {
+            &.servicelg {
+                display: none;
+                @include mq($md) {
+                    display: block;
+                }
+            }
+        }
+        li {
+            &.map {
+                flex-shrink: 0;
+                flex-grow: 0;
+                @include mq($xs,$lg - 1) {
+                    max-width: 100% !important;
+                }
+                @include mq($lg) {
+                    max-width: 500px;
+                    min-width: 500px;
+                }
+            }
+        }
+        .servicesm {
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            justify-content: flex-start;
+            width: 100%;
+            min-height: 180vw;
+            background-image: url(../../images/layout/sssm.png);
+            background-position: center;
+            background-repeat: no-repeat;
+            background-size: 87vw;
+            .svs {
+                display: flex;
+                flex-direction: column;
+                align-items: center;
+                justify-content: flex-start;
+                width: 73vw;
+                height: 97vw;
+                margin-top: 20vw;
+                overflow: auto;
+                background-color: #f5c521;
+                .seb {
+                    width: 100%;
+                    text-align: center;
+                    min-height: 200px;
+                    margin-bottom: 20px;
+                    border-radius: 15px;
+                    background-color: #fff;
+                }
+            }
+            @include mq($md) {
+                display: none;
             }
         }
         h2 {
@@ -322,8 +386,9 @@ p {
                 font-size: 20px;
                 // font-weight: bold;
             }
-            font-size: 18px;
-            @include mq($lg) {
+            font-size: 16px;
+            @include mq($md) {
+                font-size: 18px;
                 // font-size: 20px;
             }
         }
@@ -354,38 +419,6 @@ p {
             // font-size: 20px;
         }
     }
-
-    // .banner {
-    //     width: 100%;
-    //     height: 100%;
-    // }
-    // .bns {
-    //     background-repeat: no-repeat;
-    //     background-size: cover;
-    //     background-position: center;
-    //     width: 100%;
-    //     height: 100vh;
-        
-    //     @include mq($lg) {
-
-    //     }
-    //     @include mq($xxl) {
-            
-    //     }
-    // } 
-    // .bnsblock {
-    //     width: 100%;
-    //     max-width: 600px;
-    //     h2 {
-           
-    //     }   
-    //     p {
-            
-    //     }
-    //     img {
-
-    //     }
-    // }
 }
 .lineadd {
     display: flex;
@@ -393,7 +426,7 @@ p {
     justify-content: center;
     font-size: 20px;
     font-weight: bold;
-    color: #00B900;
+    color: #7f4f21;
     background-color: #fff;
     // 
     border-radius: 5px;
@@ -402,18 +435,241 @@ p {
     transition-duration: 0.4s;
     &:hover {
         color: #fff;
-        background-color: #00B900;
+        background-color: #7f4f21;
         // background-color: #061330;
     }
 }
-@keyframes bglighten {
-    // 0%   {background-image: url(../../images/layout/logobg20.png);}
-    // 10%  {background-image: url(../../images/layout/logobg30.png);}
-    // 25%  {background-image: url(../../images/layout/logobg40.png);}
-    // 40%  {background-image: url(../../images/layout/logobg50.png);}
-    // 55%  {background-image: url(../../images/layout/logobg60.png);}
-    // 70%  {background-image: url(../../images/layout/logobg70.png);}
-    // 85% {background-image: url(../../images/layout/logobg80.png);}
-    // 95%  {background-image: url(../../images/layout/logobg90.png);}
-    // 100%  {background-image: url(../../images/layout/logobg.png);}
+.spmbig {
+    // position: absolute;
+    // right: 0;
+    // top: 50%;
+    // transform: translateY(-50%);
+    width: 100%;
+    max-width: 400px;
+    @include mq($xxl) {
+        max-width: 800px;
+
+    }
+    img {
+        display: block;
+        width: 100%;
+    }
 }
+.title {
+    position: relative;
+    display: flex;
+    align-items: center;
+    justify-content: flex-start;
+    flex-shrink: 0;
+    flex-grow: 0;
+    transform: translateZ(0);
+    transform-style: preserve-3d;
+    @include mq($xl) {
+        min-height: inherit;
+    }
+    }
+
+    .title .text {
+        font-family: 'Noto Serif TC', serif !important;
+    font-weight: 400;
+    font-size: 45px;
+    /* font-size: calc(8vw / var(--word-total) ); */
+    line-height: 1.0;
+    p {
+        font-size: 20px;
+    }
+    @include mq($md) {
+        font-size: 60px;
+    }
+    @include mq($xl) {
+        font-size: 75px;
+    }
+    }
+
+    .title .write .word {
+    color: hsl(0, 0%, 100%);
+    text-shadow: 0 0 0.1em currentColor;
+    transform-style: preserve-3d;
+    animation: write linear both;
+    }
+
+    .title .laser {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    width: 100%;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: flex-start;
+    transform: translate(-50%,-50%);
+    /* To avoid the blur getting masked by the clip-path we had to duplicate the element */
+    filter: blur(4px) contrast(10);
+    pointer-events: none;
+    }
+
+    .title .laser .word {
+    display: inline-block;
+    }
+
+    .title .laser .word {
+    color: hsl(0, 100%, 75%);
+    text-shadow: 0 0 0.1em currentColor;
+    transform: translateZ(5px);
+    animation: laser linear both;
+    }
+
+    .title .write .word,
+    .title .laser .word {
+    animation-duration: 3s;
+    animation-direction: alternate;
+    animation-delay: 0;
+    /* animation-delay: calc(0.3s + var(--word-index) * 160ms); */
+    animation-iteration-count: infinite;
+    }
+
+    .title:hover .word {
+    /* animation-play-state: paused; */
+    }
+
+    /* .title .text .word,
+    .title .text .word::before {
+    animation-play-state: paused;
+    animation-delay: -0.4s;
+    } */
+
+    @keyframes write {
+    from, 70% { clip-path: polygon(-20% 0%, -15% 0%, -15% 100%, -20% 100%) }
+    70%, to { clip-path: polygon(-15% 0%, 120% 0%, 120% 100%, -15% 100%) }
+    }
+
+    @keyframes laser {
+    from, 70% { clip-path: polygon(-20% 0%, -15% 0%, -15% 100%, -20% 100%) }
+    70%, to { clip-path: polygon(115% 0%, 120% 0%, 120% 100%, 115% 100%) }
+    }
+
+    /* Recommended styles for Splitting */
+    .splitting .word,
+    .splitting .char {
+    display: inline-block;
+    }
+
+    /* Psuedo-element chars */
+    .splitting .char {
+    position: relative;
+    }
+
+    /**
+    * Populate the psuedo elements with the character to allow for expanded effects
+    * Set to `display: none` by default; just add `display: block` when you want
+    * to use the psuedo elements
+    */
+    .splitting .char::before,
+    .splitting .char::after {
+    content: attr(data-char);
+    position: absolute;
+    top: 0;
+    left: 0;
+    visibility: hidden;
+    transition: inherit;
+    user-select: none;
+    }
+
+    /* Expanded CSS Variables */
+
+    .splitting {
+    /* The center word index */
+    --word-center: calc((var(--word-total) - 1) / 2);
+
+    /* The center character index */
+    --char-center: calc((var(--char-total) - 1) / 2);
+
+    /* The center character index */
+    --line-center: calc((var(--line-total) - 1) / 2);
+    }
+
+    .splitting .word {
+    /* Pecent (0-1) of the word's position */
+    --word-percent: calc(var(--word-index) / var(--word-total));
+
+    /* Pecent (0-1) of the line's position */
+    --line-percent: calc(var(--line-index) / var(--line-total));
+    }
+
+    .splitting .char {
+    /* Percent (0-1) of the char's position */
+    --char-percent: calc(var(--char-index) / var(--char-total));
+
+    /* Offset from center, positive & negative */
+    --char-offset: calc(var(--char-index) - var(--char-center));
+
+    /* Absolute distance from center, only positive */
+    --distance: calc(
+        (var(--char-offset) * var(--char-offset)) / var(--char-center)
+    );
+
+    /* Distance from center where -1 is the far left, 0 is center, 1 is far right */
+    --distance-sine: calc(var(--char-offset) / var(--char-center));
+
+    /* Distance from center where 1 is far left/far right, 0 is center */
+    --distance-percent: calc((var(--distance) / var(--char-center)));
+    }
+
+
+    .splitting.cells img { width: 100%; display: block; }
+
+    @supports ( display: grid ) {
+    .splitting.cells {
+        position: relative;
+        overflow: hidden;
+        background-size: cover;
+        visibility: hidden;
+    }
+
+    .splitting .cell-grid {
+        background: inherit;
+        position: absolute;
+        top: 0; 
+        left: 0; 
+        width: 100%; 
+        height: 100%;
+        display: grid;
+        grid-template: repeat( var(--row-total), 1fr ) / repeat( var(--col-total), 1fr );
+    }
+
+    .splitting .cell {
+        background: inherit;
+        position: relative;
+        overflow: hidden;
+    }
+
+    .splitting .cell-inner {
+        background: inherit;
+        position: absolute;
+        visibility: visible;
+        /* Size to fit the whole container size */
+        width: calc(100% * var(--col-total));
+        height: calc(100% * var(--row-total));
+        /* Position properly */
+        left: calc(-100% * var(--col-index));
+        top: calc(-100% * var(--row-index));
+    }
+
+    /* Helper variables for advanced effects */
+    .splitting .cell {
+        --center-x: calc((var(--col-total) - 1) / 2);
+        --center-y: calc((var(--row-total) - 1) / 2);
+
+        /* Offset from center, positive & negative */
+        --offset-x: calc(var(--col-index) - var(--center-x));
+        --offset-y: calc(var(--row-index) - var(--center-y));
+
+        /* Absolute distance from center, only positive */
+        --distance-x: calc( (var(--offset-x) * var(--offset-x)) / var(--center-x) );
+
+        /* Absolute distance from center, only positive */
+        --distance-y: calc( (var(--offset-y) * var(--offset-y)) / var(--center-y) );
+    }
+    }
+
+

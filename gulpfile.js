@@ -40,6 +40,7 @@ var jsplugin = {
     'js-daterangepicker': assetspath + 'js/daterangepicker.min.js',
     'js-lity': assetspath + 'js/lity.min.js',
     'js-swiper': assetspath + 'js/swiper.min.js',
+    'js-scrollr': assetspath + 'js/scrollr.min.js',
     'js-mousewheel': assetspath + 'js/mousewheel.min.js',
     'js-overlayscrollbars': assetspath + 'js/overlayscrollbars.min.js',
 };

@@ -75,9 +75,15 @@ header {
         @include mq($lg) {
             display: block;
             .spm {
+                pointer-events: initial;
                 display: block;
                 width: 150px;
                 margin: 0 auto;
+                transition-duration: .3s;
+                cursor: pointer;
+                &:hover {
+                    transform: scale(1.05);
+                }
             }
         }
         p {

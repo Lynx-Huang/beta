@@ -11,9 +11,10 @@
     <meta name="author" content="褚鋒行銷">
     <meta name="copyright" content="褚鋒行銷">
     <title>True Man!</title>
+    <script src="https://unpkg.com/splitting/dist/splitting.min.js"></script>
     <link rel="stylesheet" href="../../../../assets/css/style.min.css">
 
-
+ 
 </head>
 
 <body> 
@@ -67,10 +68,23 @@
     <div class="index">
         <a href="https://line.takeasy.tech/" class="login">
             <i></i>
-            登入
+            登入 
         </a>
         <div class="block block1">
             <div class="wrap">
+                <div class="title">
+                    <span class="text write" data-splitting="lines">
+                      我們懂你要的行銷
+                      <p>超人系統 feat. LINE2.0 <br>你準備好了嗎</p>
+                    </span>
+                    <span aria-hidden="true" class="text laser" data-splitting="lines">
+                      我們懂你要的行銷 
+                      <p>超人系統 feat. LINE2.0 <br>你準備好了嗎</p>
+                    </span>
+                </div>
+                <div class="spmbig">
+                    <img data-0="transform:translateX(0px);" data-100="transform:translateX(500px);" src="../../../../assets/img/layout/spm2.png" alt="">
+                </div>
                 <div class="scrollDown">
                     <img src="../../../../assets/img/layout/scrollDown10.png" alt="">
                 </div>
@@ -78,7 +92,7 @@
         </div>
         <div class="block block2">
             <div class="wrap">
-                <img class="spm" src="../../../../assets/img/layout/spm2.png" alt="">
+                <!-- <img class="spm" src="../../../../assets/img/layout/spm2.png" alt=""> -->
                 <div class="desc">
                     <div class="desc-block">
                         <h2>關於我們</h2>
@@ -91,29 +105,34 @@
                     <div class="desc-block aboutUs">
                         <!-- <h2>關於褚鋒行銷</h2>、 -->
                         <ul>
-                            <li class="liborder">
+                            <li class="liborder" data-800="opacity:0;" data-1000="opacity:1;">
                                 <p><b>01 . </b><strong>網路流量部門</strong></p>
                                 <p>粉專、社團經營</p>
                                 <p>活動、行銷文案撰寫</p>
                                 <p>廣告投放、代操</p>
                                 <p>精準受眾投放</p>
                             </li>
-                            <li class="liborder">
+                            <li class="liborder" data-900="opacity:0;" data-1100="opacity:1;">
                                 <p><b>02 . </b><strong>設計美編部門</strong></p>
                                 <p>客製化美編服務</p>
                                 <p>商品照片拍攝</p>
                                 <p>粉專發文圖片設計</p>
                                 <p>Line官方帳號圖文選單設計</p>
                             </li>
-                            <li class="liborder">
+                            <li class="liborder" data-1000="opacity:0;" data-1200="opacity:1;">
                                 <p><b>03 . </b><strong>資訊系統部門</strong></p>
                                 <p>LINE聊天機器人</p>
                                 <p>LINE2.0官方帳號優化</p>
                                 <p>LINE PAY快速申辦</p>
                             </li>
-                            <li class="liborder">
+                            <li class="liborder" data-1100="opacity:0;" data-1300="opacity:1;">
                                 <p><b>04 . </b><strong>市場調查部門</strong></p>
-                                
+                                <p>市場調查</p>
+                                <p>產品分析</p>
+                                <p>使用者分析</p>
+                                <p>銷售分析</p>
+                                <p>趨勢預測</p>
+                                <p>市場行銷決策</p>
                             </li>
                         </ul>
                     </div>
@@ -126,7 +145,35 @@
                 <div class="desc">
                     <div class="desc-block">
                         <h2>關於超人系統</h2>
-                        <img src="../../../../assets/img/layout/1200x1200_工作區域 1 複本.png" alt="">
+                        <img class="servicelg" src="../../../../assets/img/layout/service.png" alt="">
+                        <div class="servicesm">
+                            <div class="svs">
+                                <div class="seb">
+                                    <h3>專屬預約系統</h3>
+                                    <p></p>
+                                </div>
+                                <div class="seb">
+                                    <h3>一鍵購物更方便</h3>
+                                    <p></p>
+                                </div>
+                                <div class="seb">
+                                    <h3>完整會員資料庫</h3> 
+                                    <p></p>
+                                </div>
+                                <div class="seb">
+                                    <h3>客戶資料分析</h3>
+                                    <p></p>
+                                </div>
+                                <div class="seb">
+                                    <h3>個人化聊天選單</h3>
+                                    <p></p>
+                                </div>
+                                <div class="seb">
+                                    <h3>後台庫存系統</h3>
+                                    <p></p>
+                                </div>
+                            </div>
+                        </div>
                     </div>
                 </div>
             </div>
@@ -140,7 +187,7 @@
                         <ul>
                             <li>
                                 <p><strong>LINE</strong></p>
-                                <img src="../../../../assets/img/layout/Line.png" alt="">
+                                <img class="line" src="../../../../assets/img/layout/Line.png" alt="">
                                 <a class="lineadd" target="_blank" href="https://lin.ee/Z5P4s0E">立即加入</a>
                             </li>
                             <li>
@@ -148,11 +195,11 @@
                                 <p>聯絡人 / 許家瑞</p>
                                 <span>0981411786</span>
                             </li>
-                            <!-- FB -->
-                            <!-- <li>
-                                <p><strong>Facebook</strong></p>
-
-                            </li> -->
+                            <li class="map">
+                                <p><strong>地址</strong></p>
+                                <p>403台中市西區台灣大道二段285號8樓</p>
+                                <iframe src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3640.5352799052316!2d120.66435921498905!3d24.15295328439242!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x34693dba6fbe2e33%3A0x6551e2675b922476!2zNDAz5Y-w5Lit5biC6KW_5Y2A5Y-w54Gj5aSn6YGT5LqM5q61Mjg16Jmf!5e0!3m2!1szh-TW!2stw!4v1594012478112!5m2!1szh-TW!2stw" width="100%" height="450" frameborder="0" allowfullscreen="" aria-hidden="false" tabindex="0"></iframe>
+                            </li>
                         </ul>
                     </div>
                 </div>
@@ -166,13 +213,20 @@
 <!-- end footer.html-->
 <!-- start loading.html-->
 <div class="loader">
-    <div id="fly-in">  
+    <!-- <div id="fly-in">  
         <div><span></span>3</div>
         <div><span></span>2</div>
         <div><span></span>1</div>
+    </div> -->
+    <div class="count">
+      Loading
+      <div class="countNumber">
+        1
+      </div>
+      %
     </div>
     <div class="superMan">
-      <p>褚鋒行銷</p>
+      <!-- <p>褚鋒行銷</p> -->
       <img src="../../../../assets/img/layout/spm3.png" alt="">
       <ul>
         <li></li>
@@ -183,11 +237,35 @@
       </ul>
     </div> 
 </div>
+
 <!-- end loading.html-->
     <script src="../../../../assets/js/main.min.js"></script>
-    <script src="../../../../assets/js/slick.min.js"></script>    <script src="../../../../assets/js/mousewheel.min.js"></script>    <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/1.12.1/plugins/CSSRulePlugin.min.js"></script>
+    <script src="../../../../assets/js/slick.min.js"></script>    <script src="../../../../assets/js/mousewheel.min.js"></script>    <script src="../../../../assets/js/scrollr.min.js"></script>    <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/1.12.1/plugins/CSSRulePlugin.min.js"></script>
     <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/1.19.0/TweenMax.min.js"></script>
     <script src="https://cdnjs.cloudflare.com/ajax/libs/vue/2.0.3/vue.min.js"></script>
+    <script>
+        $(function() {
+            var s = skrollr.init();
+            s.refresh();
+            Splitting();
+        })
+    </script>
+    <script>
+        $({
+            countNum: $('.countNumber').text()
+        }).animate({
+            countNum: 100
+        }, {
+            duration: 2000,
+            easing: 'linear',
+            step: function () {
+                $('.countNumber').text(Math.ceil(this.countNum));
+            },
+            complete: function () {
+                $('.countNumber').text("100");
+            }
+        });
+      </script>
     <script>
             function mobilenav(e) {
                 var w = $(window).width();
@@ -225,10 +303,54 @@
             
         </script>
     <script>
+
         //檢查滾輪上下事件
-        $(window).mousewheel(function(e) {
-            console.log(e.deltaY)
-        })
+        // $(window).mousewheel(function(e) {
+        //     console.log(e.deltaY)
+        // })
+        var index_num = $('.block').length
+            n = 1
+            moving = 0
+            $('.na1').find('a').on('click', ()=> {
+                n = 1
+                $("html, body").stop().animate({
+                    scrollTop: $(".block" + n).offset().top
+                },
+                    function() {
+                        moving = 0;
+                    }
+                );
+            })
+            $('.na2').find('a').on('click', ()=> {
+                n = 2
+                $("html, body").stop().animate({
+                    scrollTop: $(".block" + n).offset().top
+                },
+                    function() {
+                        moving = 0;
+                    }
+                );
+            })
+            $('.na3').find('a').on('click', ()=> {
+                n = 3
+                $("html, body").stop().animate({
+                    scrollTop: $(".block" + n).offset().top
+                },
+                    function() {
+                        moving = 0;
+                    }
+                );
+            })
+            $('.na4').find('a').on('click', ()=> {
+                n = 4
+                $("html, body").stop().animate({
+                    scrollTop: $(".block" + n).offset().top
+                },
+                    function() {
+                        moving = 0;
+                    }
+                );
+            })
         var mn = mobilenav()
         var sections = $('.block')  
             nav = $('.nav_a')
@@ -291,108 +413,6 @@
                     }
                 });
             }        
-        $(document).ready(function() {
-            //滾動滑鼠滾輪時，移動到上一頁、下一頁的效果
-
-            var index_num = $('.block').length
-            n = 1
-            moving = 0
-            $('.na1').find('a').on('click', ()=> {
-                n = 1
-                $("html, body").stop().animate({
-                    scrollTop: $(".block" + n).offset().top +20
-                },
-                    function() {
-                        moving = 0;
-                    }
-                );
-            })
-            $('.na2').find('a').on('click', ()=> {
-                n = 2
-                $("html, body").stop().animate({
-                    scrollTop: $(".block" + n).offset().top +20
-                },
-                    function() {
-                        moving = 0;
-                    }
-                );
-            })
-            $('.na3').find('a').on('click', ()=> {
-                n = 3
-                $("html, body").stop().animate({
-                    scrollTop: $(".block" + n).offset().top +20
-                },
-                    function() {
-                        moving = 0;
-                    }
-                );
-            })
-            $('.na4').find('a').on('click', ()=> {
-                n = 4
-                $("html, body").stop().animate({
-                    scrollTop: $(".block" + n).offset().top
-                },
-                    function() {
-                        moving = 0;
-                    }
-                );
-            })
-            // if(mn == '1') {
-            //     $(window).mousewheel(debounce(e => scrollToCurrentItem(e), 100,true));
-            // }
-            // function scrollToCurrentItem(e) {
-            //     if (moving == 0) {
-            //         moving = 1
-            //         if (e.deltaY == -1) {
-            //             if (n < index_num) {
-            //                 n++
-            //                 console.log(n)
-            //             }
-            //         } else if (e.deltaY == 1) {
-            //             if (n > 1) {
-            //                 n--
-            //                 console.log(n)
-            //             }
-            //         }
-            //     }
-            //     if (n == (index_num + 1)) {
-            //         // $("html, body").stop().animate({
-            //         //         scrollTop: $(".footer").offset().top
-            //         //     },
-            //         //     function() {
-            //         //         moving = 0;
-            //         //     }
-            //         // );
-            //         n--
-            //     } else {
-            //         $("html, body").stop().animate({
-            //             scrollTop: $(".block" + n).offset().top
-            //         },500,
-            //             function() {
-            //                 moving = 0;
-            //             }
-            //         );
-            //         background.style.transform = `translateY(${130 * (n - 1)}%)`;
-            //         $('.nav_a').find('.na' + n).find('a').addClass('active').parent('li').siblings().find('a').removeClass('active')
-            //         // background.style.transform = `translateY(${130 * (n - 1)}%)`;
-            //     }
-            // }
-            // function debounce(func, wait, immediate) {
-            //     var timeout;
-            //     return function() {
-            //         var context = this,
-            //             args = arguments;
-            //         var later = function() {
-            //             timeout = null;
-            //             if (!immediate) func.apply(context, args);
-            //         };
-            //         var callNow = immediate && !timeout;
-            //         clearTimeout(timeout);
-            //         timeout = setTimeout(later, wait);
-            //         if (callNow) func.apply(context, args);
-            //     };
-            // }
-        });
 
     </script>
 </body>
