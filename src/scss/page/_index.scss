@@ -46,7 +46,7 @@ p {
     transform: translateX(-50%);
     width: 30px;
     animation: scrollDown 2s linear infinite;
-    display: flex;
+    display: none;
     align-items: center;
     justify-content: center;
     // margin: 0 auto; 
@@ -64,6 +64,7 @@ p {
         content: 'DOWN';
     }
     @include mq($lg) {
+        display: flex;
         bottom: 40px;
     }
 }
@@ -96,11 +97,13 @@ p {
         min-height: calc(100vh - 93px);
         height: auto;
         // overflow: hidden;
-        .wrap {
-            background-image: url(../../images/layout/logobg20.png);
-            background-position: center;
-            background-repeat: no-repeat;
-            background-size: 80%;
+        &:nth-of-type(2n) {
+            .wrap {
+                background-image: url(../../images/layout/logobg20.png);
+                background-position: center;
+                background-repeat: no-repeat;
+                background-size: 80%;
+            }
         }
         @include mq($lg) {
             // height: 100vh;
@@ -194,7 +197,8 @@ p {
                 }
             }
             @include mq($xs, $lg - 1) {
-                margin-bottom: 89px;
+                margin-bottom: 0;
+                border-bottom: 30px solid #7F4F21;
                 img {
                     display: block;
                     width: 100%;

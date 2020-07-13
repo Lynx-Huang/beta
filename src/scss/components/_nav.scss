@@ -24,6 +24,7 @@ nav {
     }
   }
     @include mq($xs, $lg - 1) {
+      display: none;
       ul {
         display: flex;
         align-items: center;
