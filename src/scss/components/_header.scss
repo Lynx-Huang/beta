@@ -27,7 +27,7 @@ header {
 
     }
     @include mq($xxl) {
-        padding: 100px 0 0;
+        padding: 50px 0 0;
 
     }
     .logo {
@@ -68,7 +68,7 @@ header {
         width: 100%;
         display: none;
         padding: 0 30px;
-        margin-bottom: 50px;
+        margin-bottom: 30px;
         .spm {
             display: none;
         }

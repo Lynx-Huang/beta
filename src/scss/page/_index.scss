@@ -185,6 +185,7 @@ p {
                 flex-direction: row;
             }
             iframe {
+                overflow: hidden;
                 border: 5px solid #7f4f21;
                 border-radius: 30px;
                 margin-bottom: 30px;

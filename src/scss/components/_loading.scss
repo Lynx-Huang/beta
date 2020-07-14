@@ -119,6 +119,7 @@
   width: 200px;
   animation: superman 2.5s linear;
   animation-delay: 2s;
+  pointer-events: none;
   @include mq($md) {
     width: 300px;
   }
