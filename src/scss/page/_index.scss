@@ -156,7 +156,7 @@ p {
                 letter-spacing: 3px;
             }
         }
-        &.block2, &.block3, &.block4 {
+        &.block2, &.block3, &.block4, &.block5 {
             align-items: flex-start;
             justify-content: flex-start;
             @include mq($lg) {
@@ -175,6 +175,31 @@ p {
             }
         }
         &.block4 {
+            min-height: 70vh;
+            .news-lists {
+                min-height: inherit;
+            }
+            .contain {
+                min-height: inherit;
+            }
+            h2 {
+                margin-bottom: 20px;
+                margin-top: 20px;
+                display: inline-block;
+                @include mq($lg) {
+                    margin-top: 30px;
+                    margin-bottom: 20px;
+                    padding-bottom: 10px;
+                    border-bottom: 3px solid #7F4F21;
+                }
+            }
+            li {
+                p {
+                    color: #333537;
+                }
+            }
+        }
+        &.block5 {
             .line {
                 max-width: 200px;
                 margin-bottom: 20px;
@@ -278,18 +303,19 @@ p {
             flex-direction: column;
             align-items: center;
             justify-content: flex-start;
-            width: 100%;
+            width: calc(100% + 20px);
             min-height: 180vw;
+            margin: 0 -10px;
             background-image: url(../../images/layout/sssm.png);
             background-position: center;
             background-repeat: no-repeat;
-            background-size: 87vw;
+            background-size: 91vw;
             .svs {
                 display: flex;
                 flex-direction: column;
                 align-items: center;
                 justify-content: flex-start;
-                width: 73vw;
+                width: 75vw;
                 height: 97vw;
                 margin-top: 20vw;
                 overflow: auto;
@@ -297,10 +323,16 @@ p {
                 .seb {
                     width: 100%;
                     text-align: center;
-                    min-height: 200px;
+                    // min-height: 200px;
                     margin-bottom: 20px;
                     border-radius: 15px;
                     background-color: #fff;
+                }
+                p {
+                    color: #333;
+                    text-shadow: none;
+                    padding: 0 10px;
+                    margin-bottom: 30px;
                 }
             }
             @include mq($md) {
@@ -477,11 +509,14 @@ p {
     .title .text {
         font-family: 'Noto Serif TC', serif !important;
     font-weight: 400;
-    font-size: 45px;
+    font-size: 33px;
     /* font-size: calc(8vw / var(--word-total) ); */
     line-height: 1.0;
     p {
         font-size: 20px;
+    }
+    @include mq($sm) {
+        font-size: 45px;
     }
     @include mq($md) {
         font-size: 60px;

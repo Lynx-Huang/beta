@@ -13,21 +13,19 @@
 </head>
 
 <body> 
-    <!-- @@include ../include/nav.html -->
-    <!-- @@include ../include/header.html -->
     <div class="series">
         <div class="banner" style="background-image: url(../../images/layout/contact-banner-beta.jpg);">
             <!-- 文字選擇使用外框 要使用則加上wrap -->
-            <!-- <div class="wrap"> -->
-            <div class="banner-c">
-                <img src="../../images/layout/contact-banner-beta.jpg" alt="">
-                <div class="banner-c-d">
-                    <h3 class="wow fadeInDown" data-wow-delay="0.1s">副標</h3>
-                    <h2 class="wow fadeInDown" data-wow-delay="0.2s">主標文字</h2>
-                    <p class="wow fadeInDown" data-wow-delay="0.3s">內文內文</p>
+            <div class="wrap">
+                <div class="banner-c">
+                    <img src="../../images/layout/contact-banner-beta.jpg" alt="">
+                    <div class="banner-c-d">
+                        <h3 class="wow fadeInDown" data-wow-delay="0.1s">副標</h3>
+                        <h2 class="wow fadeInDown" data-wow-delay="0.2s">主標文字</h2>
+                        <p class="wow fadeInDown" data-wow-delay="0.3s">內文內文</p>
+                    </div>
                 </div>
             </div>
-            <!-- </div> -->
         </div>
         <div class="bread">
             <div class="wrap">
@@ -64,6 +62,22 @@
     <!-- @@include ../include/top.html -->
     <!-- build:js -->
     <!-- endbuild -->
+    <script>
+        $({
+            countNum: $('.countNumber').text()
+        }).animate({
+            countNum: 100
+        }, {
+            duration: 2000,
+            easing: 'linear',
+            step: function () {
+                $('.countNumber').text(Math.ceil(this.countNum));
+            },
+            complete: function () {
+                $('.countNumber').text("100");
+            }
+        });
+    </script>
 </body>
 
 </html>

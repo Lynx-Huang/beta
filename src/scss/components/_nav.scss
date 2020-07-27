@@ -16,6 +16,7 @@ nav {
     &.ihome {background-image: url(../../images/layout/ihome.svg);}
     &.iabout {background-image: url(../../images/layout/iabout.svg);}
     &.iservice {background-image: url(../../images/layout/iservice.svg);}
+    &.inews {background-image: url(../../images/layout/news.svg);background-size: 40px;}
     &.icontact {background-image: url(../../images/layout/icontact.svg);}
     @include mq($lg) {
       background-size: 50px 50px;
@@ -194,7 +195,7 @@ nav {
         .link-background {
           position: absolute;
           left: 40px;
-          top: calc(50% - 213px);
+          top: calc(50% - 265px);
           background:#fdc200;
           border-radius: 18px 0 0 18px;
           width: 260px;

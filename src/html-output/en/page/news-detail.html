@@ -12,66 +12,19 @@
 </head>
 
 <body> 
-<!-- start nav.html-->
-<nav class="nav"> 
-    <div class="link-background">
-        <div class="lbg"></div>
-    </div>
-    <ul class="nav_a">
-      <li class="na1">
-        <a class="nava active">
-            <i class="ihome"></i>
-            <span class="link-text">首頁</span>
-        </a>
-      </li>
-      <li class="na2">
-        <a class="nava">
-            <i class="iabout"></i>
-            <span class="link-text">關於褚鋒</span>
-        </a>
-      </li>
-      <li class="na3"> 
-        <a class="nava">
-            <i class="iservice"></i>
-            <span class="link-text">服務項目</span>
-        </a>
-      </li>
-      <li class="na4">
-        <a class="nava">
-            <i class="icontact"></i>
-            <span class="link-text">聯絡我們</span>
-        </a>
-      </li>
-    </ul>
-  </nav>
-
-<!-- end nav.html-->
-<!-- start header.html-->
-<header>
-    <div class="logo">
-        <a href="">
-            <img src="../../../../assets/img/layout/logo.svg" alt="">
-            <p>褚鋒行銷</p>
-        </a>
-    </div>
-    <div class="desc">
-        <img class="spm" src="../../../../assets/img/layout/spm1.png" alt="">
-    </div>
-</header>
-<!-- end header.html-->
     <div class="series">
         <div class="banner" style="background-image: url(../../../../assets/img/layout/contact-banner-beta.jpg);">
             <!-- 文字選擇使用外框 要使用則加上wrap -->
-            <!-- <div class="wrap"> -->
-            <div class="banner-c">
-                <img src="../../../../assets/img/layout/contact-banner-beta.jpg" alt="">
-                <div class="banner-c-d">
-                    <h3 class="wow fadeInDown" data-wow-delay="0.1s">副標</h3>
-                    <h2 class="wow fadeInDown" data-wow-delay="0.2s">主標文字</h2>
-                    <p class="wow fadeInDown" data-wow-delay="0.3s">內文內文</p>
+            <div class="wrap">
+                <div class="banner-c">
+                    <img src="../../../../assets/img/layout/contact-banner-beta.jpg" alt="">
+                    <div class="banner-c-d">
+                        <h3 class="wow fadeInDown" data-wow-delay="0.1s">副標</h3>
+                        <h2 class="wow fadeInDown" data-wow-delay="0.2s">主標文字</h2>
+                        <p class="wow fadeInDown" data-wow-delay="0.3s">內文內文</p>
+                    </div>
                 </div>
             </div>
-            <!-- </div> -->
         </div>
         <div class="bread">
             <div class="wrap">
@@ -141,6 +94,22 @@
 
 <!-- end top.html-->
     <script src="../../../../assets/js/main.min.js"></script>
+    <script>
+        $({
+            countNum: $('.countNumber').text()
+        }).animate({
+            countNum: 100
+        }, {
+            duration: 2000,
+            easing: 'linear',
+            step: function () {
+                $('.countNumber').text(Math.ceil(this.countNum));
+            },
+            complete: function () {
+                $('.countNumber').text("100");
+            }
+        });
+    </script>
 </body>
 
 </html>
