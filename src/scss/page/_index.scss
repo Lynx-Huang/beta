@@ -193,6 +193,11 @@ p {
                     border-bottom: 3px solid #7F4F21;
                 }
             }
+            ul {
+                max-height: 600px;
+                overflow-x: hidden;
+                // overflow-y: auto;
+            }
             li {
                 p {
                     color: #333537;
@@ -470,6 +475,10 @@ p {
     width: 200px;
     height: 50px;
     transition-duration: 0.4s;
+    &.back {
+        border: 1px solid #7F4F21;
+        margin: 0 0 0 auto;
+    }
     &:hover {
         color: #fff;
         background-color: #7f4f21;

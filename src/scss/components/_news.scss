@@ -311,6 +311,17 @@
             display: none;
         }
     }
+    &.img-open {
+        li {
+            img {
+                display: block;
+                width: 100px;
+                margin-right: 10px;
+                margin-top: 10px;
+                margin-bottom: 10px;
+            }
+        }
+    }
 }
 
 // 圖文式限制六筆換頁*
