@@ -201,6 +201,10 @@ p {
             li {
                 p {
                     color: #333537;
+                    font-size: 16px;
+                    @include mq($md) {
+                        font-size: 18px;
+                    }
                 }
             }
         }
@@ -477,7 +481,6 @@ p {
     transition-duration: 0.4s;
     &.back {
         border: 1px solid #7F4F21;
-        margin: 0 0 0 auto;
     }
     &:hover {
         color: #fff;

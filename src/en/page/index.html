@@ -18,6 +18,7 @@
     <meta property="og:description" content="" />
     <meta property="og:type" content="website">
     <title>褚鋒行銷-褚鋒超人系統</title>
+    <link rel="shortcut icon" type="image/x-icon" href="assets/img/layout/favicon.png">
     <script src="https://unpkg.com/splitting/dist/splitting.js"></script>
     <!-- build:css -->
     <!-- endbuild -->
@@ -166,6 +167,24 @@
                                         <!-- <p class="text">多行敘述文字多行敘述文字多行敘述文字多行敘述文字多行敘述文字多行敘述文字多行敘述文字...</p> -->
                                     </a>
                                 </li>
+                                <li>
+                                    <a href="news-detailWF.html">
+                                        <img src="../../images/coo/wflo.png" alt="">
+                                        <span>July 28, 2020</span>
+                                        <!-- <span>類別</span> -->
+                                        <p>歡迎【Woof Pet 沃夫寵物生活館】加入我們褚鋒超人系統行列 !!</p>
+                                        <!-- <p class="text">多行敘述文字多行敘述文字多行敘述文字多行敘述文字多行敘述文字多行敘述文字多行敘述文字...</p> -->
+                                    </a>
+                                </li>
+                                <li>
+                                    <a href="news-detailTT.html">
+                                        <img src="../../images/coo/ttlo.jpg" alt="">
+                                        <span>July 28, 2020</span>
+                                        <!-- <span>類別</span> -->
+                                        <p>歡迎【台中國際旅展】加入我們褚鋒超人系統行列 !!</p>
+                                        <!-- <p class="text">多行敘述文字多行敘述文字多行敘述文字多行敘述文字多行敘述文字多行敘述文字多行敘述文字...</p> -->
+                                    </a>
+                                </li>
                             </ul>
                         </div>
                     </div>
@@ -182,7 +201,7 @@
                             <li>
                                 <p><strong>LINE</strong></p>
                                 <img class="line" src="../../images/layout/Line.png" alt="">
-                                <a class="lineadd" target="_blank" href="https://lin.ee/Z5P4s0E">立即加入</a>
+                                <a class="lineadd" target="_blank" href="https://lin.ee/3AQw7IV">立即加入</a>
                             </li>
                             <li>
                                 <p><strong>Phone</strong></p>
@@ -191,7 +210,7 @@
                             </li>
                             <li class="map">
                                 <p><strong>地址</strong></p>
-                                <p>403台中市西區台灣大道二段285號8樓</p>
+                                <p>403台中市西區台灣大道二段285號8樓</p> 
                                 <iframe src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3640.5352799052316!2d120.66435921498905!3d24.15295328439242!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x34693dba6fbe2e33%3A0x6551e2675b922476!2zNDAz5Y-w5Lit5biC6KW_5Y2A5Y-w54Gj5aSn6YGT5LqM5q61Mjg16Jmf!5e0!3m2!1szh-TW!2stw!4v1594012478112!5m2!1szh-TW!2stw" width="100%" height="450" frameborder="0" allowfullscreen="" aria-hidden="false" tabindex="0"></iframe>
                             </li>
                         </ul>
@@ -199,6 +218,32 @@
                 </div>
             </div>
         </div>
+        <!-- Load Facebook SDK for JavaScript -->
+      <div id="fb-root"></div>
+      <script>
+        window.fbAsyncInit = function() {
+          FB.init({
+            xfbml            : true,
+            version          : 'v7.0'
+          });
+        };
+
+        (function(d, s, id) {
+        var js, fjs = d.getElementsByTagName(s)[0];
+        if (d.getElementById(id)) return;
+        js = d.createElement(s); js.id = id;
+        js.src = 'https://connect.facebook.net/zh_TW/sdk/xfbml.customerchat.js';
+        fjs.parentNode.insertBefore(js, fjs);
+      }(document, 'script', 'facebook-jssdk'));</script>
+
+      <!-- Your Chat Plugin code -->
+      <div class="fb-customerchat"
+        attribution=setup_tool
+        page_id="111680460588666"
+  theme_color="#f5c520"
+  logged_in_greeting="嗨~我是超人您有任何問題嗎 ?"
+  logged_out_greeting="嗨~我是超人您有任何問題嗎 ?">
+      </div>
     </div>
     <!-- @@include ../include/footer.html -->
     <!-- @@include ../include/loading.html -->
@@ -364,7 +409,7 @@
                         background.style.transform = `translateY(${130 * 2}%)`;
                         // background.style.transform = `translateX(${125.25 * 2}%)`;
                     }
-                    else if (cur_pos >= top4 - 80 && cur_pos <= bottom4) {
+                    else if (cur_pos >= top4 - 80 && cur_pos <= bottom4 -80) {
                         nav.find('.na' + 4).find('a').addClass('active').parent('li').siblings().find('a').removeClass('active')
                         background.style.transform = `translateY(${130 * 3}%)`;
                         // background.style.transform = `translateX(${125.25 * 3}%)`;
@@ -398,7 +443,7 @@
                     else if (cur_pos >= top3 - 80 && cur_pos <= bottom3 - 80) {
                         nav.find('.na' + 3).find('a').addClass('active').parent('li').siblings().find('a').removeClass('active')
                     }
-                    else if (cur_pos >= top4 - 80 && cur_pos <= bottom4) {
+                    else if (cur_pos >= top4 - 80 && cur_pos <= bottom4 -80) {
                         nav.find('.na' + 4).find('a').addClass('active').parent('li').siblings().find('a').removeClass('active')
                     }
                     else if (cur_pos >= top5 - 80 && cur_pos <= bottom5) {
