@@ -293,6 +293,7 @@ p {
             }
         }
         li {
+            margin-bottom: 20px !important; 
             &.ffw {
                 @include mq($xs,$lg - 1) {
                     max-width: 100% !important;
@@ -300,7 +301,7 @@ p {
                 @include mq($lg) {
                     max-width: 500px !important;
                     min-width: 500px  !important;
-                }
+                } 
             }
             &.map {
                 flex-shrink: 0;
