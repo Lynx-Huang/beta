@@ -196,7 +196,7 @@ p {
             ul {
                 max-height: 600px;
                 overflow-x: hidden;
-                // overflow-y: auto;
+                overflow-y: auto;
             }
             li {
                 p {
@@ -218,12 +218,7 @@ p {
                 flex-wrap: wrap;
                 flex-direction: row;
             }
-            iframe {
-                overflow: hidden;
-                border: 5px solid #7f4f21;
-                border-radius: 30px;
-                margin-bottom: 30px;
-            }
+            
             .desc-block {
                 ul {
                     li {
@@ -295,15 +290,30 @@ p {
             }
         }
         li {
+            &.ffw {
+                @include mq($xs,$lg - 1) {
+                    max-width: 100% !important;
+                }
+                @include mq($lg) {
+                    max-width: 500px !important;
+                    min-width: 500px  !important;
+                }
+            }
             &.map {
                 flex-shrink: 0;
                 flex-grow: 0;
+                iframe {
+                    overflow: hidden;
+                    border: 5px solid #7f4f21;
+                    border-radius: 30px;
+                    margin-bottom: 30px;
+                }
                 @include mq($xs,$lg - 1) {
                     max-width: 100% !important;
                 }
                 @include mq($lg) {
                     max-width: 500px;
-                    min-width: 500px;
+                    min-width: 100%;
                 }
             }
         }
@@ -725,3 +735,11 @@ p {
     }
 
 
+.fb_iframe_widget {
+    span {
+        width: 100% !important;
+    }
+    iframe {
+        width: 100% !important;
+    }
+}

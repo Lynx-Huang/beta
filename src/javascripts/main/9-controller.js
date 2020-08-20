@@ -4,7 +4,7 @@ $(window).load(function() {
     //     $('.loader').fadeOut(0);        
     // }, 4000);
     // 滾動css動態
-    new WOW().init();
+    // new WOW().init();
     //跑馬燈
 }) 
  
@@ -93,10 +93,10 @@ $(function() {
         $('.nav').removeClass('show');
     });
 
-    $(".lazy").lazyload({
-        threshold: 500,
-        effect: "fadeIn"
-    }); 
+    // $(".lazy").lazyload({
+    //     threshold: 500,
+    //     effect: "fadeIn"
+    // }); 
 
     function MENU() {
         if (needMask) {

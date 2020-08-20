@@ -7,7 +7,7 @@
 // Setting & default
 //=======================================================================
 @import url('https://fonts.googleapis.com/css?family=Supermercado+One');
-@import "components/mixin";
+// @import "components/mixin";
 @import "components/mq";
 @import "components/setting";
 @import "components/default";
@@ -21,23 +21,23 @@
 @import "plugin/bootstrap/mixins/grid-framework";
 @import "plugin/bootstrap/mixins/grid";
 @import "plugin/bootstrap/grid";
-@import "plugin/bootstrap/utilities/spacing";
+// @import "plugin/bootstrap/utilities/spacing";
 // slick
-@import "plugin/slick/slick";
-@import "plugin/slick/slick-theme";
+// @import "plugin/slick/slick";
+// @import "plugin/slick/slick-theme";
 // slick
 //@import "plugin/lity/_lity.scss";
 // photoswipe
-@import "plugin/photoswipe/photoswipe";
-@import "plugin/photoswipe/default-skin";
+// @import "plugin/photoswipe/photoswipe";
+// @import "plugin/photoswipe/default-skin";
 // wow
-@import "plugin/wow/wow";
+// @import "plugin/wow/wow";
 // oocss
 //@import "plugin/oocss/oocss";
 //Swiper
-@import "plugin/swiper/swiper";
+// @import "plugin/swiper/swiper";
 //scrollbar
-@import "plugin/overlayscrollbars/overlayscrollbars";
+// @import "plugin/overlayscrollbars/overlayscrollbars";
 //=======================================================================
 //Components
 //=======================================================================
@@ -50,7 +50,7 @@
 // @import "components/contact";
 @import "components/news";
 @import "components/news-detail";
-@import "components/bread";
+// @import "components/bread";
 //=======================================================================
 //Pages
 //=======================================================================

@@ -17,7 +17,7 @@
         justify-content: center;
         width: 100%;
         height: 37.5vw;
-        @include xs_md {
+        @include mq($xs,$md - 1) {
             height: auto;
             align-items: flex-start;
             background-image: none !important;
@@ -28,17 +28,17 @@
         align-items: center;
         justify-content: center; //控制左中右
         width: 100%;
-        @include xs_md {
+        @include mq($xs,$md - 1) {
             justify-content: flex-start;
             flex-direction: column;
         }
         img {
-            @include xs_md {
+            @include mq($xs,$md - 1) {
                 display: block;
                 width: 100%;
                 margin-bottom: 20px;
             }
-            @include md {
+            @include mq($md) {
                 display: none;
             }
         }
@@ -52,7 +52,7 @@
             font-size: 36px;
             font-weight: bold;
             color: #222;
-            @include md {
+            @include mq($md) {
                 font-size: 46px;
                 color: #fff;
             }
@@ -60,14 +60,14 @@
         h3 {
             font-size: 16px;
             color: #222;
-            @include md {
+            @include mq($md) {
                 font-size: 18px;
                 color: #fff;
             }
         }
         p {
             display: none;
-            @include md {
+            @include mq($md) {
                 display: block;
                 font-size: 16px;
                 color: #fff;
@@ -76,7 +76,7 @@
     }
     .contain {
         margin-bottom: 40px;
-        @include lg {
+        @include mq($lg) {
             margin-bottom: 60px;
         }
         p {
@@ -104,10 +104,10 @@
     justify-content: space-between;
     margin-bottom: 20px;
     padding-top: 40px;
-    @include xs_md {
+    @include mq($xs,$md - 1) {
         background-image: none;
     }
-    @include md {
+    @include mq($md) {
         flex-direction: row;
     }
     .back {
@@ -121,7 +121,7 @@
     flex-direction: column;
     align-items: flex-start;
     justify-content: center;
-    @include xs_md {
+    @include mq($xs,$md - 1) {
         border-bottom: 1px solid #e0e0e0;
     }
     h2 {
@@ -129,10 +129,10 @@
         font-size: 1.625rem;
         margin-bottom: 10px;
         font-weight: lighter;
-        @include md {
+        @include mq($md) {
             font-size: 1.875rem;
         }
-        @include xl {
+        @include mq($xl) {
             font-size: 2rem;
         }
     }
