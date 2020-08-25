@@ -204,8 +204,11 @@ p {
             }
         }
         &.block3 {
-            .servicelg {
-            
+            .desc-block {
+                >p {
+                    color: #7F4F21;
+                    text-shadow: none;
+                }
             }
         }
         &.block4 {
@@ -765,7 +768,7 @@ p {
         width: 100% !important;
     }
     iframe {
-        width: 100% !important;
+        // width: 100% !important;
     }
 }
 
@@ -776,7 +779,7 @@ p {
         position: relative;
         width: 300px;
         height: 470px;
-        margin: 0 auto 80px;
+        margin: 0 auto 0;
         perspective: 1000px;
         background-position: center;
         background-repeat: no-repeat;
