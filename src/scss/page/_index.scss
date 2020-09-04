@@ -578,9 +578,9 @@ p {
 
     .title .write .word {
     color: hsl(0, 0%, 100%);
-    text-shadow: 0 0 0.1em currentColor;
+    // text-shadow: 0 0 0.1em currentColor;
     transform-style: preserve-3d;
-    animation: write linear both;
+    // animation: write linear both;
     }
 
     .title .laser {
@@ -601,12 +601,17 @@ p {
     .title .laser .word {
     display: inline-block;
     }
-
+    .title p,.laser p {
+        text-shadow: none;
+    }
+    .laser {
+        display: none !important;
+    }
     .title .laser .word {
-    color: hsl(0, 100%, 75%);
-    text-shadow: 0 0 0.1em currentColor;
-    transform: translateZ(5px);
-    animation: laser linear both;
+    // color: hsl(0, 100%, 75%);
+    // text-shadow: 0 0 0.1em currentColor;
+    // transform: translateZ(5px);
+    // animation: laser linear both;
     }
 
     .title .write .word,
