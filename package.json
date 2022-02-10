@@ -37,7 +37,7 @@
         "imagemin-zopfli": "^7.0.0",
         "livereload-js": "^2.3.0",
         "mozjpeg": "^7.0.0",
-        "node-sass": "^4.11.0",
+        "node-sass": "^7.0.0",
         "svgo": "^1.0.5",
         "zopflipng-bin": "^6.0.1"
     },
